@@ -1,4 +1,25 @@
 # journal-club
+## 05.11.2017
+### Learning Deep Structured Semantic Models for Web Search using Clickthrough Data
+**Author:** Po-Sen Huang, Xiaodong He, etc.
+
+**Link:** https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/DSSM_cikm13_talk_v4.pdf
+
+**Motivation:** Keyword-based matching often fails due to the lack of semantic level interpretation. They proposed a DL model to put query and document into a common low-dim space in a supervised way (i.e. using clickthorugh data).
+
+**Approach:** Use DNN to map high-dimensional sparse text features into low-dim dense features in a semantic space. The relevance score between query and doc is measured by cosine. For word, they proposed a "word hashing" method, breaking down the word into character-level ngrams. 
+
+They simply use (siamese) DNN for both doc and query, no fancy architecture in this version. 
+
+**Algorithm:** minimize the following function:
+![](assets/570556d6.png), where
+![](assets/1860408b.png), and 
+![](assets/6d60fb16.png)
+
+**Evaluation:** Test how model can generalize from the popular URL-clicks to tail or new URLs. Baselines: TF-IDF, BM25, WTM, LSA, PLSA. Bilingual topic model with posterior regularization, discriminative projection model.
+
+ 
+
 ## 04.11.2017
 
 ### Do Deep Nets Really Need to be Deep?
