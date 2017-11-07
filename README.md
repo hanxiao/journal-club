@@ -1,5 +1,6 @@
 # journal-club
-## SWISH: A Self-Gated Activation Function
+## 07.11.2017
+### SWISH: A Self-Gated Activation Function
 **Author:** Prajit Ramachandran, etc. (Google Brain)
 
 **Link:** https://arxiv.org/abs/1710.05941
