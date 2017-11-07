@@ -1,4 +1,20 @@
 # journal-club
+## SWISH: A Self-Gated Activation Function
+**Author:** Prajit Ramachandran, etc. (Google Brain)
+
+**Link:** https://arxiv.org/abs/1710.05941
+
+**Motivation:** Relu is the default activation function in NN now. The author proposed a "Swish" activation function, i.e. f(x) = x * sigmoid(x) that consistently improving over different datasets.
+
+**Approach:** Swish is a smooth, non-linear, non-monotonic, unbounded (above) function, its parameterized version f(x) = 2x*sigmoid(beta*x) is a interpolate between linear and ReLU function. Based on following observations, they proposed Swish:
+1. Unboundedness is good because it avoids saturation (unlike sigmoid and tanh)
+2. Bounded below is good because it lets the network forgets large negative values. Bounded below zero improves the gradient flow
+3. Smoothness is good because it is more traversable, reducing sensitivity to the initialization and learning rate.
+
+
+**Evaluation:** Swish outperforms Relu in nearly all datasets/batch size/number of layers. On MNIST it is able to use Swish train very deep networks without residual connections. 
+
+
 
 ## 06.11.2017
 ### Beyond triplet loss: a deep quadruplet network for person re-identification
