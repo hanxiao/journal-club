@@ -1,4 +1,25 @@
 # journal-club
+
+## 06.11.2017
+### Beyond triplet loss: a deep quadruplet network for person re-identification
+**Author:** Weihua Chen, Xiaotang Chen, etc.
+
+**Link:** https://arxiv.org/pdf/1704.01719.pdf
+
+**Motivation:** Quadruplet loss produces larger inter-class variation and smaller intra-class variation, tends to generalize better on the test set. 
+
+**Approach:** optimize two aspects simultaneously, 1) the distance of pairs from same class (they call probe) should be smaller than from other class. If anchor is B1, relevant to B3, then B1B3 (intra-class) < B1A3 (inter-class). 2) the distance of negative pairs should be greater than any other pairs from the same class, i.e. B1A3 > C1C2, or equivalently B1B3 (intra-class) < C1A3 (inter-class). where C1A3 are all irrelevant to B1B3
+
+They propose a margin-based sampling approach to sample difficult negative examples for training. 
+
+**Algorithm:**
+Triplet loss with l2-norm metric and hinge loss:![](assets/214c08b5.png), a more general is to learn the metric, e.g. the distance function g in ![](assets/db37a4ac.png), they proposed ![](assets/60393ecd.png)
+
+![](assets/2728ca7a.png)
+
+**Evaluation:** 
+Top-1 classification accuracy (rank-1) on CUHK01, CUHK03, VIPeR
+
 ## 05.11.2017
 ### Learning Deep Structured Semantic Models for Web Search using Clickthrough Data
 **Author:** Po-Sen Huang, Xiaodong He, etc.
