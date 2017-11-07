@@ -6,6 +6,8 @@
 
 **Motivation:** Relu is the default activation function in NN now. The author proposed a "Swish" activation function, i.e. f(x) = x * sigmoid(x) that consistently improving over different datasets.
 
+![](assets/e4910474.png)
+![](assets/f7ba4e45.png)
 **Approach:** Swish is a smooth, non-linear, non-monotonic, unbounded (above) function, its parameterized version f(x) = 2x*sigmoid(beta*x) is a interpolate between linear and ReLU function. Based on following observations, they proposed Swish:
 1. Unboundedness is good because it avoids saturation (unlike sigmoid and tanh)
 2. Bounded below is good because it lets the network forgets large negative values. Bounded below zero improves the gradient flow
