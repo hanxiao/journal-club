@@ -8,7 +8,9 @@
 **Motivation:** Large batch is worse (in terms of generalization ability), but why? This paper investigates the numerical evidence: small-batch converges to flat-minima whereas large-batch converges to sharp-minima.
 
 ![](assets/5b612ab4.png)
-**Evaluation:** Numerical experiment on real and artificial data
+**Evaluation:** Numerical experiment on real and artificial data.
+
+
 **Conclusion:**
 1. LB methods tend to be attracted to minimizers close to the starting point, whereas SB methods move away and locate minimizers that are farther away.
 2. noise in the SB gradient pushes the iterates out of the basin of attraction of sharp minimizers and encourages movement towards a flatter
