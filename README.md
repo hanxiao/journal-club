@@ -1,4 +1,23 @@
 # journal-club
+## 08.11.2017
+### On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima
+**Author:** Nitish Shirish Keskar, Dheevatsa Mudigere
+
+**Link:** https://arxiv.org/pdf/1609.04836.pdf
+
+**Motivation:** Large batch is worse (in terms of generalization ability), but why? This paper investigates the numerical evidence: small-batch converges to flat-minima whereas large-batch converges to sharp-minima.
+
+![](assets/5b612ab4.png)
+**Evaluation:** Numerical experiment on real and artificial data
+**Conclusion:**
+1. LB methods tend to be attracted to minimizers close to the starting point, whereas SB methods move away and locate minimizers that are farther away.
+2. noise in the SB gradient pushes the iterates out of the basin of attraction of sharp minimizers and encourages movement towards a flatter
+   minimizer where noise will not cause exit from that basin. In LB,  the noise in the stochastic gradient is not sufficient to cause ejection
+   from the initial basin leading to convergence to sharper a minimizer.
+3. Solution: the use of dynamic sampling where the batch size is increased gradually as the iteration progresses
+   (Byrd et al., 2012; Friedlander & Schmidt, 2012). high testing accuracy is achieved using a large-batch method that is warm-start with a small-batch method.
+
+
 ## 07.11.2017
 ### SWISH: A Self-Gated Activation Function
 **Author:** Prajit Ramachandran, etc. (Google Brain)
