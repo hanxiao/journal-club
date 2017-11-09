@@ -1,4 +1,29 @@
 # journal-club
+
+## 09.11.2017
+### Learning to Respond with Deep Neural Networks for Retrieval-Based Human-Computer Conversation System
+**Author:** Rui Yan
+
+**Link:** http://www.ruiyan.me/pubs/SIGIR2016.pdf
+
+**Motivation:** proposed deep learning-to-respond framework for open-domain chatbot. Single query may not fully convey user intention in multi-turn conversations. Thus, they also use context to build reformulated query and then do retrieval.
+
+**Approach:** different query reformulation strategies using context, 
+- no context {q0}
+- whole context (all sentences concate with current query), {q0, q0+C}
+- add-one, add one sentence at time {q0, q0+c1, q0+c2, ...}.
+- dropout, leave one out {q0, q0+C\c1, q0+C\c2, ...}
+- combined, all above.
+
+network: word-embedding -> bi-LSTM, convolution on the output of LSTM, max pooling, hinge rank loss
+
+![](assets/dd248394.png)
+
+unrelated, but i will keep it here since it introduce symmetric rank loss.
+![](assets/301cb280.png)
+
+**Evaluation:** p@1, MAP, nDCG, MRR. Neural Responding Machine, DeepMatch, ARC. 
+
 ## 08.11.2017
 ### On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima
 **Author:** Nitish Shirish Keskar, Dheevatsa Mudigere
