@@ -1,5 +1,20 @@
 # journal-club
 
+## 12.11.2017
+## Bayesian Recurrent Neural Network
+**Author:** Meire Fortunato, Charles Blundell (DeepMind)
+
+**Link:** https://arxiv.org/pdf/1704.02798.pdf
+
+**Motivation:** Bayesian deep learning affords two advantages: explicit representations of uncertainty and regularization.
+They show how ton add uncertainty and regularization to RNN by using Bayesian method.
+
+**Approach:** Bayes by Backprop is equivalent to maximizing log likelihood with KL divergence as regularization.
+![](assets/faa040b3.png). The author apply this method to RNN and propose posterior sharpening method.
+
+**Evaluation:** Penn treebank, word-level perplexity, **entropy gap (nats/word)**. Image caption generation on MSCOCO.
+
+
 ## 09.11.2017
 ### Learning to Respond with Deep Neural Networks for Retrieval-Based Human-Computer Conversation System
 **Author:** Rui Yan
