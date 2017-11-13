@@ -1,5 +1,24 @@
 # journal-club
 
+## 13.11.2017
+## Dilated Recurrent Neural Networks
+   
+**Author:** Shiyu Chang, Yang Zhang (IBM TJ Watson)
+**Link:** https://arxiv.org/pdf/1704.02798.pdf
+**Motivation:** Standard RNN suffers from gradient problem and the range of temporal dependencies.
+By adding dilated skip connections to the recurrent units, it allows multi-resolution and effective training.
+
+**Approach:** The network structure is a multi-layer RNN as follows.
+
+![](assets/ba8c8cda.png)
+
+The cell at layer $l$ for time $t$ is
+![](assets/6c3d0337.png) where $s$ is the skip-length. The skip length is increased exponentially wrt layer, so each layer can capture the multi-resolution of the temporal dependency.
+
+**Evaluation:** Interesting "Copy memory problem": tests the ability of RNN in memorizing long-term information. seq of length T + 20. The first ten values are
+randomly generated from integers 0 to 7; the next T − 1 values are all 8; the last 11 values are all 9, where the first 9 signals that the model needs to start to output the first 10 values of the inputs. IRNN, full uRNN, skipped RNN, Zoneout. mnist, pen tree, VCTK.
+
+
 ## 12.11.2017
 ## Bayesian Recurrent Neural Network
 **Author:** Meire Fortunato, Charles Blundell (DeepMind)
